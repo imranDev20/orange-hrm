@@ -33,7 +33,7 @@ const AddEmployee = () => {
       });
   };
   return (
-    <div className="px-5 mt-10">
+    <div className="px-5 mt-10 w-10/12">
       <div className="bg-white p-5 rounded-2xl">
         <h2 className="mb-2 text-gray-700 font-medium text-xl">Add Employee</h2>
         <hr className="mb-2" />

@@ -7,5 +7,5 @@ body {
 }
 
 .react-tabs__tab--selected {
-  @apply bg-orange-500/20 text-orange-500;
+  @apply bg-gray-500/10 text-gray-700;
 }

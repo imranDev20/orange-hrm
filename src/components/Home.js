@@ -4,15 +4,7 @@ import MainArea from "./MainArea";
 import Sidebar from "./Sidebar";
 
 const Home = () => {
-  return (
-    <>
-      <Header />
-      <main className="flex">
-        <Sidebar />
-        <MainArea />
-      </main>
-    </>
-  );
+  return <></>;
 };
 
 export default Home;

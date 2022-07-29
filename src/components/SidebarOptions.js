@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SidebarOptions = () => {
   const options = [
     { id: 1, label: "Admin", route: "/admin" },
-    { id: 2, label: "PIM", route: "/pim" },
+    { id: 2, label: "PIM", route: "/pim/profile" },
     { id: 3, label: "Leave", route: "/leave" },
     { id: 4, label: "Time", route: "/time" },
     { id: 5, label: "My Info", route: "/my-info" },

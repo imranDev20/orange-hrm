@@ -14,17 +14,24 @@ const Login = () => {
       .then((data) => setUsersData(data));
   }, []);
 
+  console.log(usersData);
+
   const handleSumbit = (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
+    const password = e.target.password.value;
 
     const user = usersData.find(function (userData) {
       return userData.email === email;
     });
 
     if (user) {
-      navigate("/");
+      if (user && password === "admin/admin") {
+        navigate("/pim/add-employee");
+      } else {
+        navigate("/");
+      }
     } else {
       setError("User not found in the database");
     }

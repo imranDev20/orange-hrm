@@ -13,7 +13,7 @@ const Header = ({ isLogin }) => {
         <span className="flex items-center rounded-full bg-orange-400 px-1 py-1">
           <div className="w-8 h-8 mr-2 rounded-full overflow-hidden">
             <img
-              src="https://engage.eiturbanmobility.eu/decidim-packs/media/images/default-avatar-aaa9e55bac5d7159b847.svg"
+              src="https://thumbs.dreamstime.com/b/default-avatar-photo-placeholder-profile-icon-eps-file-easy-to-edit-default-avatar-photo-placeholder-profile-icon-124557887.jpg"
               alt=""
             />
           </div>
