@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ hasUser, setHasUser }) => {
   const [usersData, setUsersData] = useState([]);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
@@ -13,8 +13,6 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => setUsersData(data));
   }, []);
-
-  console.log(usersData);
 
   const handleSumbit = (e) => {
     e.preventDefault();
@@ -32,6 +30,7 @@ const Login = () => {
       } else {
         navigate("/");
       }
+      setHasUser(!hasUser);
     } else {
       setError("User not found in the database");
     }
@@ -46,13 +45,13 @@ const Login = () => {
           className="my-2 py-2 px-3 rounded-md shadow-sm outline-none focus:ring-1 focus:ring-orange-500"
           name="email"
           type="email"
-          placeholder="Email"
+          placeholder="Provide an email from the rest API"
         />
         <input
           className="my-2 py-2 px-3 rounded-md shadow-sm outline-none focus:ring-1 focus:ring-orange-500"
           name="password"
           type="password"
-          placeholder="Password"
+          placeholder="Password: admin/admin"
         />
         <input
           className="my-2 py-2 px-3 rounded-md shadow-sm outline-none bg-orange-500 text-white hover:bg-orange-600 cursor-pointer transition-all"
