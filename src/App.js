@@ -1,10 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import MainArea from "./components/MainArea";
 import Admin from "./components/Admin";
 import Pim from "./components/Pim";
-import Header from "./components/Header";
 import Login from "./components/Login";
 import Home from "./components/Home";
 
