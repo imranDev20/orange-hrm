@@ -1,6 +1,37 @@
 import React from "react";
 
 const AddEmployee = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name =
+      e.target.firstName.value +
+      " " +
+      e.target.middleName.value +
+      " " +
+      e.target.lastName.value;
+
+    const userId = e.target.userId.value;
+    const user = { name: name, id: userId };
+
+    fetch("https://gorest.co.in/public/v2/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer 09a67cab82481d698f7fc23fc405c79b8c7d35c87ba11aa8ab22c3bac7c292b8",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // enter you logic when the fetch is successful
+        console.log(data);
+      })
+      .catch((error) => {
+        // enter your logic for when there is an error (ex. error toast)
+        console.log(error);
+      });
+  };
   return (
     <div className="px-5 mt-10">
       <div className="bg-white p-5 rounded-2xl">
@@ -23,7 +54,7 @@ const AddEmployee = () => {
             </p>
           </div>
           <div className="w-4/6 px-10">
-            <form id="add-employee-form" action="">
+            <form id="add-employee-form" action="" onSubmit={handleSubmit}>
               <h3 className="mb-3">Employee Full Name*</h3>
               <div className="flex border h-12 rounded-lg overflow-hidden">
                 <input
@@ -49,6 +80,7 @@ const AddEmployee = () => {
               <input
                 className="h-full outline-none border-r pl-3 border w-full rounded-lg py-3"
                 type="text"
+                name="userId"
               />
               <hr className="mt-10" />
             </form>
@@ -56,7 +88,7 @@ const AddEmployee = () => {
               <p className="mr-3">Create login credentials</p>
 
               <label
-                for="default-toggle"
+                htmlFor="default-toggle"
                 className="inline-flex relative items-center cursor-pointer"
               >
                 <input
@@ -71,6 +103,18 @@ const AddEmployee = () => {
           </div>
         </div>
         <hr className="mt-5" />
+        <div className="flex justify-end mt-5">
+          <button className="px-5 py-2 bg-gray-200 mr-3 rounded-full text-gray-700">
+            Cancel
+          </button>
+          <button
+            className="px-5 py-2 text-white mr-3 rounded-full bg-green-500"
+            type="submit"
+            form="add-employee-form"
+          >
+            Save
+          </button>
+        </div>
       </div>
     </div>
   );

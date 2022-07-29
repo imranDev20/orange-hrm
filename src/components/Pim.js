@@ -5,7 +5,7 @@ import AddEmployee from "./AddEmployee";
 const Pim = () => {
   return (
     <div>
-      <Tabs defaultIndex="2">
+      <Tabs defaultIndex={2}>
         <TabList className="flex cursor-pointer bg-white px-5 py-2">
           <Tab className="px-4 py-1 bg-gray-400/20 text-gray-500 mr-3 rounded-full">
             Configuration
