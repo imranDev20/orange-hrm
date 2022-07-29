@@ -23,11 +23,54 @@ const AddEmployee = () => {
             </p>
           </div>
           <div className="w-4/6 px-10">
-            <div>
-              <form id="add-employee-form" action=""></form>
+            <form id="add-employee-form" action="">
+              <h3 className="mb-3">Employee Full Name*</h3>
+              <div className="flex border h-12 rounded-lg overflow-hidden">
+                <input
+                  className="h-full outline-none border-r pl-3 "
+                  name="firstName"
+                  type="text"
+                  placeholder="First Name"
+                />
+                <input
+                  className="h-full outline-none border-r pl-3 "
+                  name="middleName"
+                  type="text"
+                  placeholder="Middle Name"
+                />
+                <input
+                  className="h-full outline-none pl-3 "
+                  name="lastName"
+                  type="text"
+                  placeholder="Last Name"
+                />
+              </div>
+              <h3 className="mt-10 mb-3">Employee Id</h3>
+              <input
+                className="h-full outline-none border-r pl-3 border w-full rounded-lg py-3"
+                type="text"
+              />
+              <hr className="mt-10" />
+            </form>
+            <div className="mt-5 flex items-center">
+              <p className="mr-3">Create login credentials</p>
+
+              <label
+                for="default-toggle"
+                className="inline-flex relative items-center cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  value=""
+                  id="default-toggle"
+                  className="sr-only peer"
+                />
+                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none  rounded-full peer  peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-orange-500"></div>
+              </label>
             </div>
           </div>
         </div>
+        <hr className="mt-5" />
       </div>
     </div>
   );

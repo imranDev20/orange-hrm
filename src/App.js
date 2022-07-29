@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="admin" element={<Admin />} />
-          <Route path="pim" element={<Pim />} />
+          <Route index path="pim" element={<Pim />} />
         </Route>
         <Route path="login" element={<Login />} />
       </Routes>
